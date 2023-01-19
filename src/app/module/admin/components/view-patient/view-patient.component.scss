@@ -1,0 +1,136 @@
+:root {
+    --main-radius: 5px;
+    --main-padding: 5px;
+  }
+  
+  body {
+    font-family: "Inter", sans-serif;
+  }
+  .container::after,
+.container img {
+  border-radius: 50%;
+}
+body,
+.container,
+.stats {
+  display: flex;
+}
+
+.container {
+  
+    display: grid;
+    min-height: 25vh;
+    max-height: fit-content;
+    padding: 1rem 2rem;
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, .5);
+    max-width: 100%;
+    // margin: 1rem;
+    position: relative;
+    transform-style: preserve-3d;
+    overflow: hidden;
+    grid-template-columns: 0.6fr 1fr 1fr;
+    grid-template-rows:  1fr 1fr 1fr;
+    grid-template-areas:
+    
+      "img_box infos1 infos2"
+      "img_box infos3 infos4"
+      "img_box infos5 infos6";
+      
+    grid-gap: 0.5rem;
+    // font-weight: 800;
+    // text-transform: uppercase;
+    font-size: 15px;
+    // color: #004d40;
+    
+  }
+  .container::before,
+.container::after {
+  content: '';
+  position: absolute;
+  z-index: -1;
+}
+.container::before {
+  width: 100%;
+  height: 100%;
+  border: 1px solid #FFF;
+  border-radius: 10px;
+  top: -.7rem;
+  left: -.7rem;
+}
+.container::after {
+  height: 15rem;
+  width: 15rem;
+  background-color: #4172f5aa;
+  top: -8rem;
+  right: -8rem;
+  box-shadow: 2rem 6rem 0 -3rem #FFF
+}
+  .container img {
+    width: 8rem;
+    min-width: 80px;
+    box-shadow: 0 0 0 5px #FFF;
+  }
+
+  #img_box {
+    
+    grid-area: img_box;
+    border-radius: var(--main-radius);
+    padding-top: var(--main-padding);
+    text-align: center;
+  }
+
+  #infos1 {
+    
+    grid-area: infos1;
+    border-radius: var(--main-radius);
+    padding-top: var(--main-padding);
+  }
+
+  #infos2 {
+    
+    grid-area: infos2;
+    border-radius: var(--main-radius);
+    padding-top: var(--main-padding);
+  }
+  #infos3 {
+   
+    grid-area: infos3;
+    border-radius: var(--main-radius);
+    padding-top: var(--main-padding);
+  }
+  #infos4 {
+    
+    grid-area: infos4;
+    border-radius: var(--main-radius);
+    padding-top: var(--main-padding);
+  }
+  #infos5 {
+    
+    grid-area: infos5;
+    border-radius: var(--main-radius);
+    padding-top: var(--main-padding);
+  }
+  #infos6 {
+    
+    grid-area: infos6;
+    border-radius: var(--main-radius);
+    padding-top: var(--main-padding);
+  }
+  
+@media only screen and (max-width: 550px) {
+    .container {
+        height:100vh ;
+      grid-template-columns: 1fr;
+      grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+      grid-template-areas:
+        "img_box"
+        "infos1"
+        "infos2"
+        "infos3"
+        "infos4"
+        "infos5"
+        "infos6"
+    }
+  }
+  

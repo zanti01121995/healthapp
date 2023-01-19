@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
+import { AuthenticationService } from './Services/authentication.service';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +8,13 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'healthapp';
+  constructor(public authservice :AuthenticationService, private router:Router){
+
+  }
+
+  logout(){
+    this.authservice.logout().subscribe(()=>{
+    this.router.navigate([''])
+  });
+  }
 }

@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "clinic-4dbc5": {
+      "hosting": {
+        "healthapp": [
+          "clinic-4dbc5"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "clinic-4dbc5"
+  }
+}
